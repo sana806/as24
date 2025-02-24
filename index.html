@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <style>
+        .card {
+            border: 1px solid rgb(236, 12, 12);
+            border-radius: 10px;
+            padding: 15px;
+        }
+        .card-img {
+            display: block;
+            margin: 15px auto;
+            border-radius:10px;
+        }
+        .card-heading {
+            text-align: center;
+        }
+        .quantity-btn-container {
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc0CP3KOXcs5-Fjf4ZlS3YiWBb_a3Mmg7M7g&s" alt="" height="300px" class="card-img">
+        <h1 class="card-heading"> Onion Burger</h1>
+
+        <div class="quantity-btn-container">
+            <button type="button" onclick="decrement()">
+                -
+            </button>
+            <span id="quantity">1</span>
+            <button type="button" onclick="increment()">
+                +
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const quantityElement = document.getElementById("quantity");
+        let quantity = parseInt(quantityElement.innerText);
+
+        function increment() {
+            quantityElement.innerText = ++quantity;
+        }
+
+        function decrement() {
+            quantityElement.innerText = --quantity;
+        }
+    </script>
+</body>
+</html>
